@@ -1,9 +1,9 @@
 import Home from "./pages/home/Home";
-import GreenhouseSection from "./pages/greenhouses/greenhouses";
-import HarvestSumary from "./pages/greenhouses/HarvestSumary";
-import TemperatureHumidityCorrelation from "./pages/data_graphs/TemperatureHumidityCorrelation";
 import GreenHouseInformation from "./pages/greenhouses/GreenHouseInformation";
 import GreenhousesPage from "./pages/greenhouses/GreenHousesList";
+import TemperatureHumidityCorrelation from "./pages/data_graphs/TemperatureHumidityCorrelation";
+import GeneralStatisticsPage from "./pages/data_graphs/GeneralStatisticsPage";
+import DataGraphsPage from "./pages/data_graphs/DataGraphsPage";
 
 const AppRoutes = [
     {
@@ -31,12 +31,12 @@ const AppRoutes = [
         element:<GreenHouseInformation></GreenHouseInformation>
     },
     {
-        path: '/temperature-and-humidity/:g_id', // here we can add id to get data for each greenhouse
-        element:<TemperatureHumidityCorrelation></TemperatureHumidityCorrelation>
+        path: '/general-statistics/graphs/:g_id', // here we can add id to get data for each greenhouse
+        element:<DataGraphsPage></DataGraphsPage>
     },
     {
         path: '/general-statistics',
-        element: <GreenhousesPage></GreenhousesPage>
+        element: <GeneralStatisticsPage></GeneralStatisticsPage>
     },
 ];
 
