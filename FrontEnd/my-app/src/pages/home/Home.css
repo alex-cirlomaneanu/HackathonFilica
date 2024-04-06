@@ -19,36 +19,55 @@ header {
 
 /* Gradient Background for the Whole Page */
 body {
-  background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%); /* Modern gradient background */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to bottom, #f5f5f5, #e0e0e0); /* Light gray gradient */
+  color: #333;
+  text-align: center;
 }
 
-.dashboard-button {
-  background: linear-gradient(145deg, #8DEBDA, #B1A6E6);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
+/* Include any global or layout styles from previous instructions here */
+
+.yields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Keep 2 items per row */
+  gap: 30px;
   justify-content: center;
-  padding: 20px 40px;
+  align-items: center;
+  padding: 20px;
+}
+
+.navigation-square {
+  background: linear-gradient(145deg, #8DEBDA, #B1A6E6);
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  width: 100%; /* Ensure buttons stretch to fill grid cell */
-  text-decoration: none; /* Remove underline from links */
-  font-size: 20px; /* Larger font size for visibility */
+  text-align: center;
 }
 
-.dashboard-button svg {
-  margin-right: 10px; /* Space between icon and text */
+.navigation-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px; /* Adjust padding for larger squares */
+  text-decoration: none;
+  color: #fff; /* White text for better contrast */
 }
 
-.dashboard-button:hover {
+.navigation-link p {
+  margin-top: 20px; /* Space between icon and text */
+  font-size: 20px; /* Font size for readability */
+}
+
+.navigation-square:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
-  /* Adjust grid to stack buttons vertically on smaller screens */
   .yields-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack the squares on smaller screens */
   }
 }
