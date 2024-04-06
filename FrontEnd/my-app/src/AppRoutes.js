@@ -1,5 +1,7 @@
 import Home from "./pages/home/Home";
-import GreenhouseSection from "./pages/greenhouses/greenhouses";
+import GreenHouseInformation from "./pages/greenhouses/GreenHouseInformation";
+import GreenhousesPage from "./pages/greenhouses/GreenHousesList";
+import TemperatureData from "./pages/data_graphs/TemperatureData";
 
 const AppRoutes = [
     {
@@ -12,7 +14,19 @@ const AppRoutes = [
     },
     {
         path: '/my-greenhouses',
-        element:<GreenhouseSection></GreenhouseSection>
+        element:<GreenHouseInformation></GreenHouseInformation>
+    },
+    {
+        path: '/list-greenhouses',
+        element: <GreenhousesPage></GreenhousesPage>
+    },
+    {
+        path: '/greenhouse/:g_id',
+        element:<GreenHouseInformation></GreenHouseInformation>
+    },
+    {
+        path: '/temperature-evolution',
+        element:<TemperatureData></TemperatureData>
     }
 ];
 
