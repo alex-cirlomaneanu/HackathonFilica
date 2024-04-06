@@ -4,10 +4,10 @@ import axios from "axios";
 import {useParams} from "react-router-dom";
 import './GraphStyle.css';
 
-const TemperatureHumidityCorrelation = () => {
+const TemperatureHumidityCorrelation = ({ g_id }) => {
   const [temperatureData, setTemperatureData] = useState([]);
   const [humidityData, setHumidityData] = useState([]);
-  let {g_id} = useParams();
+  // let {g_id} = useParams();
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/temperature-evolution/${g_id}`)

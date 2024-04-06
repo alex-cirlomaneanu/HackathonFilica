@@ -15,7 +15,7 @@ const Graph = ({ datasets }) => {
       chartInstance.current = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: datasets[0].data.map(dataPoint => dataPoint.hour),
+          labels: datasets[0].data.map(dataPoint => dataPoint.hour || dataPoint.date),
           datasets: datasets.map(dataset => ({
             label: dataset.label,
             data: dataset.data.map(dataPoint => dataPoint.value),

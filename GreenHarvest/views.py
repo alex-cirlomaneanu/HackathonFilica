@@ -6,6 +6,9 @@ from rest_framework.response import Response
 from .data.green_house_data import GREENHOUSE_DATA
 from .data.temperature_evolution import TEMPERATURE_EVOLUTION
 from .data.humidity_evolution import HUMIDITY_EVOLUTION
+from .data.ph_evolution import PH_EVOLUTION
+from .data.solar_energy import SOLAR_ENERGY
+
 
 @api_view(['GET'])
 def hello_world(request):
@@ -46,7 +49,26 @@ def view_temperature_evolution(request, greenhouse_id):
 @api_view(['GET'])
 def view_humidity_evolution(request, greenhouse_id):
     """Function used to view the evolution of humidity during the day."""
-    print(greenhouse_id)
+
     return Response(
         {"humidity_data": HUMIDITY_EVOLUTION.get(greenhouse_id).get("humidity_evolution")}
     )
+
+
+@api_view(['GET'])
+def get_ph_data(request, greenhouse_id):
+    """Function used to view the ph data of each day."""
+
+    return Response(
+        {"ph_data": PH_EVOLUTION.get(greenhouse_id).get("ph_evolution")}
+    )
+
+
+@api_view(['GET'])
+def get_power_data(request, greenhouse_id):
+    """Function used to view the power data for each day."""
+
+    return Response({
+        "used_power": SOLAR_ENERGY.get(greenhouse_id).get("power_consumption"),
+        "generated_power": SOLAR_ENERGY.get(greenhouse_id).get("solar_power_production")
+    })
