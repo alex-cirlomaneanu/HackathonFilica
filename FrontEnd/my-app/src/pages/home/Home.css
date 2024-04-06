@@ -1,31 +1,54 @@
+/* Overall Page Styles */
+body, .home-container {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-align: center; /* Center align the text */
+}
+
 .home-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px; /* Adjust padding for overall container */
 }
 
 header {
-  text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px; /* Add space below the header */
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* Gradient Background for the Whole Page */
+body {
+  background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%); /* Modern gradient background */
 }
 
-p {
-  font-size: 1.1rem;
-  color: #555;
+.dashboard-button {
+  background: linear-gradient(145deg, #8DEBDA, #B1A6E6);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  width: 100%; /* Ensure buttons stretch to fill grid cell */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 20px; /* Larger font size for visibility */
 }
 
-section {
-  margin-bottom: 40px;
+.dashboard-button svg {
+  margin-right: 10px; /* Space between icon and text */
 }
 
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #888;
+.dashboard-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  /* Adjust grid to stack buttons vertically on smaller screens */
+  .yields-grid {
+    grid-template-columns: 1fr;
+  }
 }

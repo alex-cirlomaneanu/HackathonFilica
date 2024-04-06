@@ -1,30 +1,25 @@
 import React from 'react';
-import './Home.css';
+import './Home.css'; // Ensure to add styles for the YieldSquare and grid layout here
 import Header from "../../components/Layout/Header";
-import Footer from "../../components/Layout/Footer"; // Fișierul pentru stilizare
+import Footer from "../../components/Layout/Footer";
+import YieldSquare from "./YieldSquare"; // Assuming this is in the same directory
 
 function Home() {
-  return (
-      <>
-          <Header />
-          <div className="home-container">
-              <header>
-                <h1>Welcome to Our Page!</h1>
-                <p>Discover innovative solutions for farm sustainability using circular economy and ecology.</p>
-              </header>
-              <section>
-                <h2>How Can We Help?</h2>
-                <p>Explore our tools to optimize resources, manage waste, and promote sustainable agriculture.</p>
-              </section>
-              <section>
-                <h2>About Us</h2>
-                <p>We are a dedicated team developing solutions for farmers who want to contribute to protecting the environment. Read more about our mission and values.</p>
-              </section>
-          </div>
-          <Footer />
-      </>
-
-  );
+    return (
+        <>
+            <div className="home-container">
+                <header>
+                    <h1>Welcome to Our Dashboard!</h1>
+                </header>
+                <div className="yields-grid">
+                    <YieldSquare plant="Tomatoes" yield="250kg" />
+                    <YieldSquare plant="Potatoes" yield="500kg" />
+                    <YieldSquare plant="Carrots" yield="300kg" />
+                    <YieldSquare plant="Lettuce" yield="150kg" />
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default Home;
