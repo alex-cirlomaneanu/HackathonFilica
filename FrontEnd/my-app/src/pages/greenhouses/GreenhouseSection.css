@@ -7,7 +7,6 @@
     margin: auto;
     max-width: 800px;
 }
-
 .data-square {
     display: flex;
     flex-direction: column;
@@ -21,13 +20,11 @@
     padding: 10px;
     gap: 8px;
 }
-
 .data-square button {
     background: none;
     border: none;
     cursor: pointer;
 }
-
 h2 {
     text-align: center;
     margin: 20px 0;

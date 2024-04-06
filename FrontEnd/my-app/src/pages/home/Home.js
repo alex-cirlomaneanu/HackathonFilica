@@ -21,7 +21,7 @@ function Home() {
                 <h1>Welcome to Our Dashboard!</h1>
             </header>
             <div className="yields-grid">
-                <NavigationSquare to="/my-greenhouses" icon={FaWarehouse} label="My Greenhouses" />
+                <NavigationSquare to="/list-greenhouses" icon={FaWarehouse} label="My Greenhouses" />
                 <NavigationSquare to="/my-sensors" icon={FaTachometerAlt} label="My Sensors" />
                 <NavigationSquare to="/my-production" icon={FaSeedling} label="My Production" />
                 <NavigationSquare to="/general-statistics" icon={FaChartLine} label="General Statistics" />

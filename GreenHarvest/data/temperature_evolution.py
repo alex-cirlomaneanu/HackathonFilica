@@ -1,0 +1,58 @@
+TEMPERATURE_EVOLUTION = {
+    "GH2345": {
+        "temperature_evolution": [
+            {"hour": "00:00", "value": 18},
+            {"hour": "01:00", "value": 17},
+            {"hour": "02:00", "value": 16},
+            {"hour": "03:00", "value": 16},
+            {"hour": "04:00", "value": 15},
+            {"hour": "05:00", "value": 15},
+            {"hour": "06:00", "value": 16},
+            {"hour": "07:00", "value": 17},
+            {"hour": "08:00", "value": 18},
+            {"hour": "09:00", "value": 20},
+            {"hour": "10:00", "value": 22},
+            {"hour": "11:00", "value": 24},
+            {"hour": "12:00", "value": 25},
+            {"hour": "13:00", "value": 26},
+            {"hour": "14:00", "value": 27},
+            {"hour": "15:00", "value": 27},
+            {"hour": "16:00", "value": 26},
+            {"hour": "17:00", "value": 25},
+            {"hour": "18:00", "value": 24},
+            {"hour": "19:00", "value": 23},
+            {"hour": "20:00", "value": 22},
+            {"hour": "21:00", "value": 21},
+            {"hour": "22:00", "value": 20},
+            {"hour": "23:00", "value": 19}
+        ]
+    },
+    "GH5678": {
+        "temperature_evolution": [
+            {"hour": "00:00", "value": 20},
+            {"hour": "01:00", "value": 19},
+            {"hour": "02:00", "value": 18},
+            {"hour": "03:00", "value": 18},
+            {"hour": "04:00", "value": 17},
+            {"hour": "05:00", "value": 17},
+            {"hour": "06:00", "value": 18},
+            {"hour": "07:00", "value": 19},
+            {"hour": "08:00", "value": 20},
+            {"hour": "09:00", "value": 22},
+            {"hour": "10:00", "value": 24},
+            {"hour": "11:00", "value": 26},
+            {"hour": "12:00", "value": 27},
+            {"hour": "13:00", "value": 28},
+            {"hour": "14:00", "value": 29},
+            {"hour": "15:00", "value": 29},
+            {"hour": "16:00", "value": 28},
+            {"hour": "17:00", "value": 27},
+            {"hour": "18:00", "value": 26},
+            {"hour": "19:00", "value": 25},
+            {"hour": "20:00", "value": 24},
+            {"hour": "21:00", "value": 23},
+            {"hour": "22:00", "value": 22},
+            {"hour": "23:00", "value": 21}
+        ]
+    },
+}
