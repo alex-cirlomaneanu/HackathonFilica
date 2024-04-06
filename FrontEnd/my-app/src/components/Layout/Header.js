@@ -9,7 +9,6 @@ export const Header = () => {
     <Navbar.Brand as={Link} to="/" className="navbar-brand">
         <Image src={'/logo/power.png'} alt="Green Harvest Logo" height="30" className="d-inline-block align-top" /> Green Harvest
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/login" className="nav-link">Login</Nav.Link>

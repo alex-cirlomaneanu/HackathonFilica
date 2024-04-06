@@ -1,15 +1,28 @@
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Layout from "./pages/shared/Layout";
 import AppRoutes from "./AppRoutes";
+import React, {useState} from "react";
+
 
 function App() {
+    const [harvestRecords, setHarvestRecords] = useState([]);
+
+    const addHarvestRecord = (record) => {
+        setHarvestRecords([...harvestRecords, record]);
+    };
+
     return (
         <Layout>
             <Routes>
                 {AppRoutes.map((route, index) => {
-                    const { element, ...rest } = route;
-                    return <Route exact key={index} {...rest} element={element} />;
+                    // Clone the element and inject additional props
+                    const element = React.cloneElement(route.element, {
+                        harvestRecords,
+                        addHarvestRecord,
+                        key: index
+                    });
+                    return <Route key={index} path={route.path} element={element} />;
                 })}
             </Routes>
         </Layout>
