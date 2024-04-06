@@ -1,42 +1,22 @@
-import { NavLink, Link } from 'react-router-dom';
-import {NavDropdown, Image, Nav, Navbar} from "react-bootstrap";
 import React from 'react';
-
+import { Navbar, Nav, Image} from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Asigurați-vă că aveți importat Link-ul din 'react-router-dom'
+import './Header.css'
 
 export const Header = () => {
-    return (
-        <>
-            <header className='header-bottom py-2'>
-                <div className='container'>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <div className="container-fluid">
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarNav">
-                                <ul className="navbar-nav ">
-                                    <li className="nav-item mx-5">
-                                        <Link to='/' className='d-flex align-items-center gap-15 text-black'>
-                                            <p className='mb-0'>Home</p>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item mx-5">
-                                        <Link to='/login' className='d-flex align-items-center gap-10 text-black'>
-                                            <p className='mb-0'>LogIn</p>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item mx-5">
-                                        <Link to='/store' className='d-flex align-items-center gap-10 text-black'>
-                                            <p className='mb-0'>Store</p>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-        </>
+   return (
+   <Navbar className="navbar" expand="lg" fluid>
+    <Navbar.Brand as={Link} to="/" className="navbar-brand">
+        <Image src={'/logo/power.png'} alt="Green Harvest Logo" height="30" className="d-inline-block align-top" /> Green Harvest
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/login" className="nav-link">Login</Nav.Link>
+          <Nav.Link as={Link} to="/store" className="nav-link">About</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
     )
 }
 

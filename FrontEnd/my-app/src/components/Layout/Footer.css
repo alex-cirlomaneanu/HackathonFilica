@@ -1,0 +1,78 @@
+.footer {
+  background-color: #264653;
+  color: #fff;
+  padding: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Aliniază elementele pe întreaga lățime a containerului */
+  flex-wrap: wrap; /* Permite elementelor să fie pe mai multe linii dacă spațiul este insuficient */
+}
+
+.footer-section {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact {
+  margin-bottom: 10px;
+}
+
+.contact span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.socials a {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.links li {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.links li a:hover {
+  color: #ff7f50;
+}
+
+.contact-form .text-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  background-color: #F4A261;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}

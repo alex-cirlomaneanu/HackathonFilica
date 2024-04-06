@@ -1,88 +1,52 @@
-import React from 'react'
-import { NavLink, Link } from 'react-router-dom';
-import {BsInstagram, BsFacebook } from "react-icons/bs";
-const Footer = () => {
-    return (
-        <>
-            <footer className='py-4'>
-                <div className='container-xxl'>
-                    <div className='row align-item-center'>
-                        <div className='col-5'>
-                            <div className='footer-top-data d-flex gap-30 align-items-center'>
-                                <img src='images/svg/newsletter.png' alt='newsletter'/>
-                                <h2 className='mb-0 text-white'>Sing Up for Newsletter</h2>
-                            </div>
-                        </div>
-                        <div className='col-7'>
-                            <div className="input-group">
-                                <input
-                                    type="text"
-                                    className="form-control py-2"
-                                    placeholder="Your Email Address"
-                                    aria-label="Your Email Address"
-                                    aria-describedby="basic-addon2"
-                                />
-                                <span className="input-group-text p-2" id="basic-addon2">
-                  Subscribe
-                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <footer className='py-3'>
-                <div className='container-xxl'>
-                    <div className='row'>
-                        <div className='col-4'>
-                            <h4 className='mb-4 text-white'>Contact Us</h4>
-                            <div>
-                                <address className='text-white fs-6'>
-                                    Bucuresti
-                                </address>
-                                <a className='text-white' href='tel:+40 787 607 239'>+40 787 607 239</a>
-                                <a className='mt-4 d-block mb-2 text-white' href='support@autotrade.ro'>support@autotrade.ro</a>
-                                <div className='social_icons d-flex align-items-center gap-30'>
-                                    <a className='text-white' href=''>
-                                        <BsInstagram className='fs-4'/>
-                                    </a>
-                                    <a className='text-white' href=''>
-                                        <BsFacebook className='fs-4'/>
-                                    </a>
-                                </div>
-                            </div>
+import React from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import "./Footer.css"
 
-                        </div>
-                        <div className='col-3'>
-                            <h4 className='mb-4 text-white'>Information</h4>
-                            <div></div>
-                        </div>
-                        <div className='col-3'>
-                            <h4 className='mb-4 text-white'>Account</h4>
-
-                            <div className='footer-links d-flex flex-column'>
-                                <Link className='text-white py-1 mb-1'>About Us</Link>
-                                <Link className='text-white py-1 mb-1'>Faq</Link>
-                                <Link className='text-white py-1 mb-1'>Contact</Link>
-                            </div>
-                        </div>
-                        <div className='col-2'>
-                            <h4 className='mb-4 text-white'>Quick links</h4>
-                            <div></div>
-                        </div>
+function Footer() {
+  return (
+    <div className="footer">
+            <div className="footer-content">
+                <div className="footer-section about">
+                    <h1 className="logo-text">Green Harvest</h1>
+                    <h4>
+                        Harvesting Sustainability, Cultivating Tomorrow.
+                    </h4>
+                    <div className="contact">
+                        <span><i className="fas fa-phone"></i> &nbsp; 0740 123 456</span>
+                        <span><i className="fas fa-envelope"></i> &nbsp; </span>
+                    </div>
+                    <div className="socials">
+                        <a href="https://www.facebook.com/"><i className="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
                     </div>
                 </div>
-            </footer>
-            <footer className='py-4'>
-                <div className='container-xxl'>
-                    <div className='row'>
-                        <div className='col-12'>
-                            <p className='text-center mb-0 text-white'>&copy; {new Date().getFullYear()} Powered by Razvan Coman</p>
-                        </div>
-                    </div>
+                <div className="footer-section links">
+                    <h2>Quick Links</h2>
+                    <br/>
+                    <ul>
+                        <a href="src/components/layout/footer#"><li>Events</li></a>
+                        <a href="src/components/layout/footer#"><li>Termes & conditions</li></a>
+                        <a href="/about"><li>About us</li></a>
+                    </ul>
                 </div>
-            </footer>
-        </>
-    )
+                <div className="footer-section contact-form">
+                    <h2>Contact us</h2>
+                    <br/>
+                    <form action="index.html" method="post">
+                        <input type="email" name="email" className="text-input contact-input" placeholder="Your e-mail address..."/>
+                        <textarea rows="4" name="message" className="text-input contact-input" placeholder="Write a message..."></textarea>
+                        <button type="submit" className="btn btn-big contact-btn">
+                            <i className="fas fa-envelope"></i>
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                &copy; GreenHarvest.com | Designed by Filica Instaltoru
+            </div>
+        </div>
+  );
 }
 
-export default Footer
+export default Footer;
