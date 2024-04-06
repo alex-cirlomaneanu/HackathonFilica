@@ -1,0 +1,12 @@
+.rounded-corner-div {
+  border-radius: 10px; /* Adjust the value as needed for the desired level of rounding */
+  overflow: hidden; /* Ensure content within the div respects the rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+}
+
+.graph-container {
+  padding-top: 20px; /* Small padding at the top */
+  padding-left: 60px; /* Larger padding left */
+  padding-right: 50px; /* Larger padding right */
+  margin-bottom: 40px; /* Margin bottom */
+}

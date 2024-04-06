@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaWarehouse } from 'react-icons/fa';
-// import greenhouseImage from './greenhouse.jpg';
-import '../home/Home.css';
+import greenhouseImage from '../../assets/greenhouse-effect.png';
+import './GreenhousesPage.css'; // Import CSS for styling
 import axios from "axios";
 
 function NavigationSquare({ to, icon: Icon, label, image, name }) {
@@ -19,17 +19,16 @@ function NavigationSquare({ to, icon: Icon, label, image, name }) {
 }
 
 function GreenhousesPage() {
-    
     const [greenhouses, setGreenHouses] = useState([]);
 
     useEffect(() => {
-      axios.get('http://localhost:8000/api/list-greenhouses/')
-        .then(response => {
-          setGreenHouses(response.data.greenhouse_houses);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        axios.get('http://localhost:8000/api/list-greenhouses/')
+            .then(response => {
+                setGreenHouses(response.data.greenhouse_houses);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }, []);
 
     return (
@@ -44,7 +43,7 @@ function GreenhousesPage() {
                         to={`/greenhouse/${greenhouse.id}`}
                         icon={FaWarehouse}
                         label={greenhouse.id}
-                        image="{greenhouseImage}"
+                        image={greenhouseImage}
                         name={greenhouse.name}
                     />
                 ))}

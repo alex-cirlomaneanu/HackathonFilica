@@ -1,0 +1,34 @@
+.greenhouses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 0 100px; /* Increased left and right padding */
+  margin-bottom: 60px; /* Increased bottom margin */
+}
+
+.navigation-square {
+  background-color: #f0f0f0;
+  padding: 10px; /* Smaller padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.navigation-square:hover {
+  transform: scale(0.95); /* Smaller scale on hover */
+}
+
+.navigation-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.navigation-square p {
+  margin-top: 10px;
+  text-align: center;
+}

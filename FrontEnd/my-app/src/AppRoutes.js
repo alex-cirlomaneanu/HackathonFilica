@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home";
 import GreenHouseInformation from "./pages/greenhouses/GreenHouseInformation";
 import GreenhousesPage from "./pages/greenhouses/GreenHousesList";
-import TemperatureData from "./pages/data_graphs/TemperatureData";
+import TemperatureHumidityCorrelation from "./pages/data_graphs/TemperatureHumidityCorrelation";
 
 const AppRoutes = [
     {
@@ -13,10 +13,6 @@ const AppRoutes = [
         element: <Home />
     },
     {
-        path: '/my-greenhouses',
-        element:<GreenHouseInformation></GreenHouseInformation>
-    },
-    {
         path: '/list-greenhouses',
         element: <GreenhousesPage></GreenhousesPage>
     },
@@ -25,9 +21,13 @@ const AppRoutes = [
         element:<GreenHouseInformation></GreenHouseInformation>
     },
     {
-        path: '/temperature-evolution',
-        element:<TemperatureData></TemperatureData>
-    }
+        path: '/temperature-and-humidity/:g_id', // here we can add id to get data for each greenhouse
+        element:<TemperatureHumidityCorrelation></TemperatureHumidityCorrelation>
+    },
+    {
+        path: '/general-statistics',
+        element: <GreenhousesPage></GreenhousesPage>
+    },
 ];
 
 export default AppRoutes;

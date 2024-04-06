@@ -1,23 +1,46 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { FaTemperatureHigh, FaTint, FaSun, FaRegLightbulb, FaLeaf, FaRulerCombined, FaPowerOff, FaToggleOn, FaToggleOff } from 'react-icons/fa';
 import { MdLandscape } from 'react-icons/md';
 import { GiWateringCan } from 'react-icons/gi';
 import './GreenhouseSection.css';
-import HarvestModal from "./HarvestModal"; // Ensure this CSS file is properly linked
+import HarvestModal from "./HarvestModal";
+import axios from "axios";
+import {useParams} from "react-router-dom"; // Ensure this CSS file is properly linked
 
 const GreenhouseSection = ({ harvestRecords, addHarvestRecord }) => {
   const [activeTab, setActiveTab] = useState('controlling');
-  const [greenhouseData, setGreenhouseData] = useState([
-    { icon: MdLandscape, label: 'ID', value: 'GH2345', hasToggle: false },
-    { icon: FaLeaf, label: 'Plant', value: 'Carrots', hasToggle: false },
-    { icon: FaRulerCombined, label: 'Area', value: '140 sq.m', hasToggle: false },
-    { icon: FaTemperatureHigh, label: 'Temperature', value: '26', hasToggle: true },
-    { icon: FaTint, label: 'Humidity', value: '62', hasToggle: true },
-    { icon: FaSun, label: 'Light Intensity', value: '820', hasToggle: true },
-    { icon: GiWateringCan, label: 'Soil pH', value: '6.6', hasToggle: true },
-    { icon: FaRegLightbulb, label: 'Soil Humidity', value: '65', hasToggle: true },
-    { icon: FaPowerOff, label: 'Power Consumption', value: '7', hasToggle: false }
-  ]);
+
+  const [greenHouseInformation, setGreenHouseInformation] = useState({});
+  const [greenhouseData, setGreenhouseData] = useState([]);
+  let {g_id} = useParams();
+
+  useEffect(() => {
+      axios.get(`http://localhost:8000/api/greenhouse/${g_id}`)
+          .then(response => {
+              setGreenHouseInformation(response.data.greenhouse_info);
+              // Update greenhouseData based on fetched information
+              setGreenhouseData([
+                  { icon: MdLandscape, label: 'ID', value: response.data.greenhouse_info.id, hasToggle: false },
+                  { icon: FaLeaf, label: 'Plant', value: response.data.greenhouse_info.plant, hasToggle: false },
+                  { icon: FaRulerCombined, label: 'Area', value: `${response.data.greenhouse_info.area} sq.m`, hasToggle: false },
+                  { icon: FaTemperatureHigh, label: 'Temperature', value: `${response.data.greenhouse_info.temperature}` , hasToggle: true },
+                  { icon: FaTint, label: 'Humidity', value: `${response.data.greenhouse_info.humidity}`, hasToggle: true },
+                  { icon: FaSun, label: 'Light Intensity', value: `${response.data.greenhouse_info.light_intensity}`, hasToggle: true },
+                  { icon: GiWateringCan, label: 'Soil pH', value: `${response.data.greenhouse_info.soil_ph}`, hasToggle: true },
+                  { icon: FaRegLightbulb, label: 'Soil Humidity', value: `${response.data.greenhouse_info.soil_humidity}`, hasToggle: true },
+                  { icon: FaPowerOff, label: 'Power Consumption', value: `${response.data.greenhouse_info.power_consumption}`, hasToggle: false }
+              ]);
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  }, []);
+  console.log(greenHouseInformation.name)
+  console.log(greenHouseInformation.id)
+  console.log(greenHouseInformation)
+  console.log(typeof greenHouseInformation)
+  // console.log(JSON.stringify(greenHouseInformation))
+
   const [toggleStates, setToggleStates] = useState(greenhouseData.reduce((acc, item, idx) => ({ ...acc, [idx]: false }), {}));
 
   const toggle = (idx) => {
@@ -58,7 +81,7 @@ const GreenhouseSection = ({ harvestRecords, addHarvestRecord }) => {
 
   return (
       <>
-        <h2>Greenhouse Zeta</h2>
+        <h2>{greenHouseInformation.name}</h2>
         <div className="tabs">
           <button onClick={() => setActiveTab('controlling')}>Controlling</button>
           <button onClick={() => setActiveTab('monitoring')}>Monitoring</button>
