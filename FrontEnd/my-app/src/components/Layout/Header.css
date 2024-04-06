@@ -1,33 +1,43 @@
 .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #264653;
-    padding: 10px;
+    background-color: #4CAF50; /* A vibrant green to fit the "Green Harvest" theme */
+    padding: 10px 20px; /* Adjust padding for a more compact navbar */
 }
 
 .navbar-brand {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px; /* Increase font size for better visibility */
+    color: #fff !important; /* Ensure the brand text is white for contrast */
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
 }
 
-.navbar-brand:hover {
-    color: #F4A261;
+.navbar-brand img {
+    margin-right: 10px; /* Space between logo and brand text */
+}
+
+.navbar-toggle {
+    border-color: #fff; /* Change toggle button border color for contrast */
 }
 
 .nav-link {
-    color: #ffffff;
-    font-size: 18px;
-    text-decoration: none;
-    margin-left: 20px;
-    /*border-radius: 10px;*/
-    /*border: white 1px solid;*/
-    text-align: center;
+    color: #fff !important; /* Ensures nav links are white for readability */
+    margin-left: 20px; /* Spacing between nav items */
+    font-size: 18px; /* Slightly larger nav items for better readability */
 }
 
 .nav-link:hover {
-    /*text-decoration: underline;*/
-    color: coral;
+    color: #ddf4e8 !important; /* A lighter green on hover for a subtle effect */
+}
+
+/* Adjustments for mobile nav collapse */
+.navbar-collapse {
+    background-color: #4CAF50;
+}
+
+@media (max-width: 992px) {
+    .nav-link {
+        color: #fff !important; /* Ensuring readability on collapsed/mobile nav */
+        padding: 10px 20px;
+        border-bottom: 1px solid #fff; /* Visual separation of nav items in collapsed view */
+    }
 }
