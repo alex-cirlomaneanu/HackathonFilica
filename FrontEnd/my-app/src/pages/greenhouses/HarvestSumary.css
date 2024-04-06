@@ -1,0 +1,54 @@
+.harvest-summary-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.harvest-summary-title {
+    margin-bottom: 30px;
+    color: #4CAF50;
+}
+
+.harvest-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.harvest-card {
+    width: calc(50% - 10px);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.harvest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.harvest-card-content {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plant-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.harvest-amount {
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+@media screen and (max-width: 768px) {
+    .harvest-card {
+        width: 100%; /* Full width on smaller screens for better readability */
+    }
+}
