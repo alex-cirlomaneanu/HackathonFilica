@@ -1,6 +1,9 @@
 import Home from "./pages/home/Home";
 import GreenhouseSection from "./pages/greenhouses/greenhouses";
 import HarvestSumary from "./pages/greenhouses/HarvestSumary";
+import TemperatureHumidityCorrelation from "./pages/data_graphs/TemperatureHumidityCorrelation";
+import GreenHouseInformation from "./pages/greenhouses/GreenHouseInformation";
+import GreenhousesPage from "./pages/greenhouses/GreenHousesList";
 
 const AppRoutes = [
     {
@@ -18,7 +21,8 @@ const AppRoutes = [
     {
         path: '/my-production',
         element: <HarvestSumary></HarvestSumary>
-    }
+    },
+    {
         path: '/list-greenhouses',
         element: <GreenhousesPage></GreenhousesPage>
     },
