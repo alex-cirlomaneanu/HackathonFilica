@@ -1,0 +1,109 @@
+/* ChatInterface.css */
+.chat-interface {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it floats above everything else */
+}
+
+.chat-bubble {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.chat-window {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.chat-footer button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 300px; /* Adjust based on your design */
+    padding: 10px;
+}
+
+.user, .assistant {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: #4CAF50; /* Example color for user messages */
+    color: white;
+}
+
+.assistant {
+    align-self: flex-start; /* Align assistant messages to the left */
+    background-color: #f1f1f1; /* Lighter background for assistant */
+    color: #333; /* Darker text for readability */
+}
+
+.system {
+    align-self: center; /* System messages can be centered */
+    background-color: #ddd;
+    color: #333;
+    font-style: italic;
+}

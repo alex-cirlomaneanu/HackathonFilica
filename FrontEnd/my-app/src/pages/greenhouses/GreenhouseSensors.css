@@ -1,0 +1,63 @@
+/* GreenhouseSensors.css */
+.greenhouses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background to let the cards stand out */
+}
+
+.greenhouse {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    padding: 20px;
+    width: 300px; /* Consistent width for each card */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.greenhouse:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.greenhouse h2 {
+    color: #333; /* Darker color for contrast */
+    margin-bottom: 20px; /* Space between the title and sensors */
+}
+
+.sensors {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive grid for sensors */
+    gap: 10px;
+}
+
+.sensor {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Slightly off-white for the sensor backgrounds */
+}
+
+.sensor.on {
+    border-left: 5px solid #4CAF50; /* Green border for ON sensors */
+}
+
+.sensor.off {
+    border-left: 5px solid #ff6347; /* Red border for OFF sensors */
+}
+
+.sensor span:last-child {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+/* Adding a bit of responsiveness */
+@media (max-width: 768px) {
+    .greenhouses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
