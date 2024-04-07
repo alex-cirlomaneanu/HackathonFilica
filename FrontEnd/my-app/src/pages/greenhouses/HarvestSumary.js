@@ -5,7 +5,13 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 const HarvestSummary = ({ harvestRecords, addHarvestRecord }) => {
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
     const harvestYears = ['2020', '2021', '2022', '2023']; // Assuming 4 years for simplicity
-
+    const randomColor = () => {
+        // Generate a bright color by restricting the RGB range
+        const r = Math.floor(Math.random() * 128 + 127); // 127-255
+        const g = Math.floor(Math.random() * 128 + 127); // 127-255
+        const b = Math.floor(Math.random() * 128 + 127); // 127-255
+        return `rgb(${r}, ${g}, ${b})`;
+    };
     const prepareChartData = (harvestRecords) => {
         const datasets = [];
 
@@ -27,8 +33,8 @@ const HarvestSummary = ({ harvestRecords, addHarvestRecord }) => {
                 label: plant,
                 data, // Data for each year
                 fill: false,
-                backgroundColor: 'randomColor()', // You can define a function to assign colors
-                borderColor: 'randomColor()', // Same as above
+                backgroundColor: randomColor(), // You can define a function to assign colors
+                borderColor: randomColor(), // Same as above
             });
         });
 

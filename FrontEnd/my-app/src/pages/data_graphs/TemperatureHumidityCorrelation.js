@@ -33,7 +33,14 @@ const TemperatureHumidityCorrelation = ({ g_id }) => {
     { label: 'Temperature (°C)', data: temperatureData, color: 'rgb(255, 99, 132)' },
     { label: 'Humidity (%)', data: humidityData, color: 'rgb(75, 192, 192)' },
   ];
-
+  const simulateMonitoringData = (value) => {
+    // Randomly adjust the value within ±1 range
+    const adjustment = Math.random() > 0.5 ? 1 : -1;
+    return Number(value) + adjustment;
+  };
+  useEffect(() => {
+    setTemperatureData([...temperatureData, simulateMonitoringData(temperatureData.at(-1))]);
+    }, 30000); // Updates every 30 seconds when the "Monitoring" tab is active
   return (
       <div className="rounded-corner-div graph-container">
         <h1>Temperature and Humidity Evolution</h1>

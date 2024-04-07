@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Layout from "./pages/shared/Layout";
 import AppRoutes from "./AppRoutes";
 import React, {useState} from "react";
+import ChatInterface from "./ChatInterface";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                     return <Route key={index} path={route.path} element={element} />;
                 })}
             </Routes>
+            <ChatInterface />
         </Layout>
     );
 }

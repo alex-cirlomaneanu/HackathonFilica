@@ -4,6 +4,10 @@ import GreenhousesPage from "./pages/greenhouses/GreenHousesList";
 import TemperatureHumidityCorrelation from "./pages/data_graphs/TemperatureHumidityCorrelation";
 import GeneralStatisticsPage from "./pages/data_graphs/GeneralStatisticsPage";
 import DataGraphsPage from "./pages/data_graphs/DataGraphsPage";
+import GreenhouseSection from "./pages/greenhouses/greenhouses";
+import HarvestSumary from "./pages/greenhouses/HarvestSumary";
+import GeneralSensorsPage from "./pages/greenhouses/GeneralSensorsPage";
+import GreenhouseSensors from "./pages/greenhouses/GeneralSensorsGreenHouse";
 
 const AppRoutes = [
     {
@@ -37,6 +41,14 @@ const AppRoutes = [
     {
         path: '/general-statistics',
         element: <GeneralStatisticsPage></GeneralStatisticsPage>
+    },
+    {
+        path: '/my-sensors',
+        element: <GeneralSensorsPage></GeneralSensorsPage>
+    },
+    {
+        path: '/general-sensors/:g_id', // here we can add id to get data for each greenhouse
+        element:<GreenhouseSensors></GreenhouseSensors>
     },
 ];
 
